@@ -1,19 +1,31 @@
 ﻿using CollectionViewDemo.MVVM.Models;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace CollectionViewDemo.MVVM.ViewModels
 {
+    [AddINotifyPropertyChangedInterface]
     internal class DataViewModel
     {
         public ObservableCollection<Product> Products { get; set; }
+        public bool IsRefreshing { get; set; }
 
-        public DataViewModel()
-        {
+        public ICommand RefreshCommand => 
+            new Command(async () => 
+            {
+                IsRefreshing= true;
+                await Task.Delay(3000); // Simulating data receiving from a remote server
+                RefreshItems();
+                IsRefreshing = false;                
+
+            });
+        public void RefreshItems() {
 
             Products = new ObservableCollection<Product>()
             {
@@ -429,6 +441,12 @@ namespace CollectionViewDemo.MVVM.ViewModels
                 },
 
             };
+
+        }
+        public DataViewModel()
+        {
+
+            RefreshItems();
 
         }
     }
