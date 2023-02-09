@@ -12,14 +12,15 @@
     <RefreshView Command="{Binding RefreshCommand}"
                  IsRefreshing="{Binding IsRefreshing}">    
         
-        <CollectionView ItemsSource="{Binding Products}"
+        <CollectionView ItemsSource="{Binding Products}" 
+                        ItemsLayout="HorizontalList"
                         ItemTemplate="{StaticResource ProductTemplates}"
                         RemainingItemsThreshold="1"
                         RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}">
-            <CollectionView.ItemsLayout>
+            <!--<CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>
-            </CollectionView.ItemsLayout>
+            </CollectionView.ItemsLayout>-->
         </CollectionView>
         
     </RefreshView>
