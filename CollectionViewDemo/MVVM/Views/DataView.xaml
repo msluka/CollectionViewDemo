@@ -21,7 +21,7 @@
                                    ItemSpacing="20"/>
             </CollectionView.ItemsLayout>-->
             <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Horizontal"
+                <GridItemsLayout Orientation="Vertical"
                                    Span="3"/>
             </CollectionView.ItemsLayout>
         </CollectionView>
