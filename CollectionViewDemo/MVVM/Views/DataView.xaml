@@ -20,10 +20,28 @@
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>
             </CollectionView.ItemsLayout>-->
-            <CollectionView.ItemsLayout>
+            <!--<CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical"
                                    Span="3"/>
-            </CollectionView.ItemsLayout>
+            </CollectionView.ItemsLayout>-->
+            <CollectionView.Header>
+                <Frame BackgroundColor="{StaticResource Primary}"
+                       CornerRadius="0">
+                    <Label FontAttributes="Bold"
+                           Text="Header"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"/>
+                </Frame>
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <Frame BackgroundColor="{StaticResource Primary}" 
+                       CornerRadius="0">
+                    <Label FontAttributes="Bold"
+                           Text="Foote"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"/>
+                </Frame>
+            </CollectionView.Footer>
         </CollectionView>
         
     </RefreshView>
