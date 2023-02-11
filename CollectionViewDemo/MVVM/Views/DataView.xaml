@@ -12,10 +12,12 @@
     <RefreshView Command="{Binding RefreshCommand}"
                  IsRefreshing="{Binding IsRefreshing}">    
         
-        <CollectionView ItemsSource="{Binding Products}"
+        <CollectionView ItemsSource="{Binding Products}"                        
                         ItemTemplate="{StaticResource ProductTemplates}"
                         RemainingItemsThreshold="1"
-                        RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}">
+                        RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged">
             <!--<CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>
