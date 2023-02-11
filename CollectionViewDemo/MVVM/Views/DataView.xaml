@@ -16,8 +16,9 @@
                         ItemTemplate="{StaticResource ProductTemplates}"
                         RemainingItemsThreshold="1"
                         RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"
-                        SelectionMode="Single"
-                        SelectionChanged="CollectionView_SelectionChanged">
+                        SelectionMode="Single"                      
+                        SelectedItem="{Binding SelectedProduct}"
+                        SelectionChangedCommand="{Binding ProdcutChangedCommand}">
             <!--<CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>

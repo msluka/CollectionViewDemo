@@ -3,6 +3,7 @@ using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,16 @@ namespace CollectionViewDemo.MVVM.ViewModels
         public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>();
         public bool IsRefreshing { get; set; }
 
+        public Product SelectedProduct { get; set; }
+
+        public ICommand ProdcutChangedCommand =>
+          new Command(() =>
+          {
+              var selectedProduct = SelectedProduct;
+              Debug.WriteLine(selectedProduct.Name);
+
+          });
+                
         public ICommand RefreshCommand => 
             new Command(async () => 
             {

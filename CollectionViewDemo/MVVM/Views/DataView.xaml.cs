@@ -11,11 +11,11 @@ public partial class DataView : ContentPage
 		BindingContext = new DataViewModel();
 	}
 
-    private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-		var element = e.CurrentSelection;
-		var name = (element.FirstOrDefault() as Models.Product).Name;
-		Debug.WriteLine(name);		
+  //  private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+  //  {
+		//var element = e.CurrentSelection;
+		//var name = (element.FirstOrDefault() as Models.Product).Name;
+		//Debug.WriteLine(name);		
 
-    }
+  //  }
 }
