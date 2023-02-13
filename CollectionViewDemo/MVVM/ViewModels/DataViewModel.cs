@@ -18,7 +18,18 @@ namespace CollectionViewDemo.MVVM.ViewModels
         public bool IsRefreshing { get; set; }
 
         public Product SelectedProduct { get; set; }
+        public List<object> SelectedProducts { get; set; } = new();
+       
+        
+        public ICommand ProductsChangedCommand =>
+        new Command(() =>
+        {
+            var productList = SelectedProducts;
+            var i = productList.Count() - 1;
+            var name = (productList[i] as Product).Name;
+            Debug.WriteLine(name);
 
+        });
         public ICommand ProdcutChangedCommand =>
           new Command(() =>
           {

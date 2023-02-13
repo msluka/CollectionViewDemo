@@ -17,7 +17,8 @@
                         RemainingItemsThreshold="1"
                         RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"
                         SelectionMode="Multiple"
-                        SelectionChanged="CollectionView_SelectionChanged">
+                        SelectedItems="{Binding SelectedProducts}"
+                        SelectionChangedCommand="{Binding ProductsChangedCommand}">
             <!--<CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>
