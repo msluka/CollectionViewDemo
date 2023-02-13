@@ -504,7 +504,7 @@ namespace CollectionViewDemo.MVVM.ViewModels
         }
         public DataViewModel()
         {
-
+            
             RefreshItems();
 
             /// Select first and second item in a list from ViewModel
@@ -514,7 +514,7 @@ namespace CollectionViewDemo.MVVM.ViewModels
 
             /// Select third item in a list from ViewModel
             /// when single selection mode 
-            SelectedProduct = Products.Skip(2).FirstOrDefault();
+            SelectedProduct = Products.Skip(2).FirstOrDefault();                        
 
         }
     }

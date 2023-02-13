@@ -24,7 +24,8 @@
                         RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"
                         SelectionMode="Multiple"
                         SelectedItems="{Binding SelectedProducts}"
-                        SelectionChangedCommand="{Binding ProductsChangedCommand}">
+                        SelectionChangedCommand="{Binding ProductsChangedCommand}"
+                        EmptyView="No data found!">
             <!--<CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>
