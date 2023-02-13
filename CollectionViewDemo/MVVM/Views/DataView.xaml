@@ -24,8 +24,7 @@
                         RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"
                         SelectionMode="Multiple"
                         SelectedItems="{Binding SelectedProducts}"
-                        SelectionChangedCommand="{Binding ProductsChangedCommand}"
-                        EmptyView="No data found!">
+                        SelectionChangedCommand="{Binding ProductsChangedCommand}">
             <!--<CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>
@@ -52,6 +51,13 @@
                            HorizontalTextAlignment="Center"/>
                 </Frame>
             </CollectionView.Footer>
+
+                <CollectionView.EmptyView>
+                    <Image Source="notfound.png"
+                           VerticalOptions="Center"
+                           HeightRequest="150"/>
+                </CollectionView.EmptyView>
+            
         </CollectionView>
         
     </RefreshView>
