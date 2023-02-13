@@ -498,6 +498,15 @@ namespace CollectionViewDemo.MVVM.ViewModels
 
             RefreshItems();
 
+            /// Select first and second item in a list from ViewModel
+            /// when multiple selection mode
+            SelectedProducts.Add(Products.Skip(0).FirstOrDefault());
+            SelectedProducts.Add(Products.Skip(1).FirstOrDefault());
+
+            /// Select third item in a list from ViewModel
+            /// when single selection mode 
+            SelectedProduct = Products.Skip(2).FirstOrDefault();
+
         }
     }
 }
