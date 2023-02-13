@@ -8,10 +8,16 @@
     <ContentPage.Resources>
         <DataTemplates:ProductDataTemplateSelector x:Key="ProductTemplates"/>
     </ContentPage.Resources>
+    
+    <Grid RowDefinitions=".1*,.9*">
+        
+        <Button Text="Clear Selections"
+                Command="{Binding ClearSelectionCommand}"/>
 
-    <RefreshView Command="{Binding RefreshCommand}"
-                 IsRefreshing="{Binding IsRefreshing}">
-
+        <RefreshView Command="{Binding RefreshCommand}"
+                 IsRefreshing="{Binding IsRefreshing}"
+                     Grid.Row="1">
+        
         <CollectionView ItemsSource="{Binding Products}"                        
                         ItemTemplate="{StaticResource ProductTemplates}"
                         RemainingItemsThreshold="1"
@@ -48,5 +54,6 @@
         </CollectionView>
         
     </RefreshView>
+    </Grid>
 
 </ContentPage>
