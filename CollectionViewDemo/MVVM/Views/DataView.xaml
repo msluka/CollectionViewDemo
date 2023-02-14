@@ -7,12 +7,23 @@
 
     <ContentPage.Resources>
         <DataTemplates:ProductDataTemplateSelector x:Key="ProductTemplates"/>
+
+        <ContentView x:Key="NoResultsView">
+            <Label Text="No results View"
+                   VerticalOptions="Center"/>
+        </ContentView>
+        
+        <ContentView x:Key="ConnectionErrorView">
+            <Label Text="Coonection Error View"
+                   VerticalOptions="Center"/>
+        </ContentView>
     </ContentPage.Resources>
     
     <Grid RowDefinitions=".1*,.9*">
         
         <Button Text="Clear Selections"
                 Command="{Binding ClearSelectionCommand}"/>
+        <Switch Toggled="Switch_Toggled"/>
 
         <RefreshView Command="{Binding RefreshCommand}"
                  IsRefreshing="{Binding IsRefreshing}"
@@ -24,7 +35,8 @@
                         RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"
                         SelectionMode="Multiple"
                         SelectedItems="{Binding SelectedProducts}"
-                        SelectionChangedCommand="{Binding ProductsChangedCommand}">
+                        SelectionChangedCommand="{Binding ProductsChangedCommand}"
+                        x:Name="collectionView">
             <!--<CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
                                    ItemSpacing="20"/>

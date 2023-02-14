@@ -20,6 +20,12 @@ public partial class DataView : ContentPage
 
     }
 
+    private void Switch_Toggled(object sender, ToggledEventArgs e)
+    {
+        var isToggled = e.Value;
+        collectionView.EmptyView = isToggled ? Resources["NoResultsView"] : Resources["ConnectionErrorView"];
+    }
+
     //  private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     //  {
     //var element = e.CurrentSelection;
