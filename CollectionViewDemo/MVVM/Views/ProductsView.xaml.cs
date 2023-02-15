@@ -36,6 +36,6 @@ public partial class ProductsView : ContentPage
                         .FirstOrDefault(x => x.Id == 10);
 
         /// Scrolling to a List element
-        collectionView.ScrollTo(product);
+        collectionView.ScrollTo(product, animate:false);
     }
 }
