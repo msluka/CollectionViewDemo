@@ -23,6 +23,18 @@ namespace CollectionViewDemo.MVVM.ViewModels
                 into groups
                 select new ProductsGroup(groups.Key, groups.ToList());
 
+            int id = 1;
+
+            foreach (var group in grouped)
+            {
+                foreach (var product in group) {
+
+                    product.Id = id;
+                    id++;
+                
+                }           
+            }
+
             Products = grouped.ToList();
         }
         private List<Product> LoadItems() {

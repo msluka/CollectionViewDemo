@@ -23,4 +23,10 @@ public partial class ProductsView : ContentPage
         Debug.WriteLine("LastVisibleItemIndex: " + e.LastVisibleItemIndex);
         Debug.Write("----------------------------------------");
     }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        /// Scrolling to an element
+        collectionView.ScrollTo(10);
+    }
 }
