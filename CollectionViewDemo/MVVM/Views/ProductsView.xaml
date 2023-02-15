@@ -14,7 +14,9 @@
             Scrolled="CollectionView_Scrolled"
             ItemsUpdatingScrollMode="KeepLastItemInView">
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout ItemSpacing="15" Orientation="Vertical"/>
+                <LinearItemsLayout ItemSpacing="15" Orientation="Vertical"
+                                   SnapPointsType="Mandatory"
+                                   SnapPointsAlignment="Start"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
