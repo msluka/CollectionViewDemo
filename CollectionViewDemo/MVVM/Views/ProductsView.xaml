@@ -11,7 +11,8 @@
             x:Name="collectionView"
             IsGrouped="True"
             ItemsSource="{Binding Products}"
-            Scrolled="CollectionView_Scrolled">
+            Scrolled="CollectionView_Scrolled"
+            ItemsUpdatingScrollMode="KeepLastItemInView">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="15" Orientation="Vertical"/>
             </CollectionView.ItemsLayout>
