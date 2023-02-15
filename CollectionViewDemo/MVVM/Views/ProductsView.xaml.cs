@@ -27,6 +27,15 @@ public partial class ProductsView : ContentPage
     private void Button_Clicked(object sender, EventArgs e)
     {
         /// Scrolling to an element
-        collectionView.ScrollTo(10);
+        //collectionView.ScrollTo(10);
+
+        var vm = BindingContext as ProductsViewModel;
+
+        var product = vm.Products
+                        .SelectMany(p=>p)
+                        .FirstOrDefault(x => x.Id == 10);
+
+        /// Scrolling to a List element
+        collectionView.ScrollTo(product);
     }
 }
